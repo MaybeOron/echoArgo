@@ -2,7 +2,7 @@ app:
   namespace: default
   replicas: 2
   name: echo-yaml
-  image: gcr.io/k8s-3-echov3/echov3
+  image: oroncohen/echo:1.0.0
   tag: latest
   port: 3000
   resources:
