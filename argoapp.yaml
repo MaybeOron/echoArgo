@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: echoapp
+  namespace: echo2
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/MaybeOron/echoArgo.git
+    targetRevision: HEAD
+    path: echo
+  helm:
+    valueFiles:
+    - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: echo2
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - Validate=false
+    - CreateNamespace=true
+    - PrunePropagationPolicy=foreground
+    - PruneLast=true
