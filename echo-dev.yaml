@@ -12,8 +12,18 @@ spec:
     path: echo
   
     helm:
-      valueFiles:
-      - values.yaml
+       # valueFiles:
+      # - values.yaml
+      
+      values: |
+        app:
+          image: oroncohen/echo
+          namespace: dev
+          name: echo-dev
+          tag: 1.0.8
+        domain:
+          url: dev.oronargo.tk
+        replicaCount: 1
   
   destination:
     server: https://kubernetes.default.svc
