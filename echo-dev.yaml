@@ -8,6 +8,7 @@ metadata:
     argocd-image-updater.argoproj.io/dex.helm.image-name: app.image
     argocd-image-updater.argoproj.io/dex.helm.image-tag: app.tag
     argocd-image-updater.argoproj.io/echo.update-strategy: semver:1.x.x
+    argocd-image-updater.argoproj.io/write-back-method: git
 
 spec:
   project: default
