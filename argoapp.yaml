@@ -3,18 +3,22 @@ kind: Application
 metadata:
   name: echoapp
   namespace: echo2
+
 spec:
   project: default
   source:
     repoURL: https://github.com/MaybeOron/echoArgo.git
     targetRevision: HEAD
     path: echo
-  helm:
-    valueFiles:
-    - values.yaml
+  
+    helm:
+      valueFiles:
+      - values.yaml
+  
   destination:
     server: https://kubernetes.default.svc
     namespace: echo2
+  
   syncPolicy:
     automated:
       prune: true
@@ -23,4 +27,4 @@ spec:
     - Validate=false
     - CreateNamespace=true
     - PrunePropagationPolicy=foreground
-    - PruneLast=true
+   # - PruneLast=true
