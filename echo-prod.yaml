@@ -5,10 +5,10 @@ metadata:
   namespace: argocd
   annotations:
     argocd-image-updater.argoproj.io/image-list: echo=oroncohen/echo
-    argocd-image-updater.argoproj.io/dex.helm.image-name: app.image
-    argocd-image-updater.argoproj.io/dex.helm.image-tag: app.tag
-    argocd-image-updater.argoproj.io/echo.update-strategy: semver:1.x.x
-    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/echo.helm.image-name: app.image
+    argocd-image-updater.argoproj.io/echo.helm.image-tag: app.tag
+    argocd-image-updater.argoproj.io/echo.update-strategy: semver:~1.0
+    #argocd-image-updater.argoproj.io/write-back-method: git
 
 spec:
   project: default
