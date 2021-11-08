@@ -3,6 +3,11 @@ kind: Application
 metadata:
   name: echo-dev
   namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: echo=oroncohen/echo
+    argocd-image-updater.argoproj.io/dex.helm.image-name: app.image
+    argocd-image-updater.argoproj.io/dex.helm.image-tag: app.tag
+    argocd-image-updater.argoproj.io/echo.update-strategy: semver:1.x.x
 
 spec:
   project: default
